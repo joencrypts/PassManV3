@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassMan - Secure Password Management</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Add Lottie library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="assets/img/logo.png" alt="PassMan Logo" style="height: 40px;">
+                    <span style="font-weight: 800; font-size: 24px; color: hsl(229, 100%, 40%);"> PassMan</span>
+                </a>
+            </div>            
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#security">Security</a>
+                <a href="#faq">FAQ</a>
+                <a href="http://127.0.0.1:5000/login" class="btn btn-outline">Login</a>
+                <a href="http://127.0.0.1:5000/register" class="btn btn-primary">Get Started Free</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Secure Password Management Made Simple</h1>
+                <p>Store, share, and manage your passwords with enterprise-grade security</p>
+                <div class="cta-buttons">
+                    <a href="#pricing" class="btn btn-primary">Get Started Free</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-animation" style="position: relative; width: 100%; height: 400px; overflow: hidden;">
+                <lottie-player 
+                    id="animationOne"
+                    src="assets/animations/Animation2.json" 
+                    background="transparent"  
+                    speed="0.3"  
+                    style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 1; transition: opacity 1s ease;" 
+                    autoplay
+                    loop>
+                </lottie-player>
+                
+                <lottie-player 
+                    id="animationTwo"
+                    src="assets/animations/Animation3.json" 
+                    background="transparent"  
+                    speed="0.5"  
+                    style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; transition: opacity 1s ease;" 
+                    autoplay
+                    loop>
+                </lottie-player>
+            </div>
+            
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            
+            <script>
+                const anim1 = document.getElementById('animationOne');
+                const anim2 = document.getElementById('animationTwo');
+            
+                let showingFirst = true;
+            
+                function toggleAnimations() {
+                    if (showingFirst) {
+                        anim1.style.opacity = 0;
+                        anim2.style.opacity = 1;
+                    } else {
+                        anim1.style.opacity = 1;
+                        anim2.style.opacity = 0;
+                    }
+                    showingFirst = !showingFirst;
+                }
+            
+                // Custom Timing (Manual Loop)
+                // Instead of waiting for "complete" event (which can be unreliable if animations are looping),
+                // We use a fixed interval assuming average animation duration.
+            
+                setInterval(toggleAnimations, 5000); // every 5 seconds morph to next
+            </script>                 
+            
+        </div>
+    </section>
+
+    <!-- Problem + Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="problem-content">
+                <h2>Tired of Forgotten Passwords and Security Risks?</h2>
+                <ul>
+                    <li>Juggling multiple passwords across sites</li>
+                    <li>Risk of critical data breaches</li>
+                    <li>Unsafe ways of storing sensitive credentials</li>
+                </ul>
+            </div>
+            <div class="solution-content">
+                <h2>Meet PassMan</h2>
+                    <p>PassMan securely stores, organizes, and protects your credentials with end-to-end encryption, ensuring your privacy stays intact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Why Choose PassMan?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>End-to-End Encryption</h3>
+                    <p>Your passwords are encrypted before they even leave your device.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Safe AWS Cloud Security</h3>
+                    <p>Your data is securely stored in AWS cloud with permission control.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Auto-Fill & Password Generator</h3>
+                    <p>Instantly login to websites and generate strong passwords.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-sync"></i>
+                    <h3>Multi-Device Sync</h3>
+                    <p>Access your vault from mobile, desktop, or browser extensions.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Dynamic Encryption</h3>
+                    <p>Hackers will lose hashes before hashing.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-key"></i>
+                    <h3>2FA Authentication</h3>
+                    <p>Add an extra layer of security to your account.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Easy One Click to Sign-Up</h3>
+                    <p>Create your secure PassMan account in seconds.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Add Passwords in Seconds</h3>
+                    <p>Import, save, and organize all your passwords effortlessly.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Secure Access Anywhere</h3>
+                    <p>Instantly access your vault from any trusted device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">Free</div>
+                    <ul>
+                        <li>Store up to 15 passwords</li>
+                        <li>1 device sync</li>
+                        <li>Basic support</li>
+                    </ul>
+                    <a href="http://127.0.0.1:5000/register" class="btn btn-primary" style="margin-top: 2em; display: inline-block;">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price">$6<span>/month</span></div>
+                    <ul>
+                        <li>Unlimited passwords</li>
+                        <li>Multi-device sync</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="http://127.0.0.1:5000/register" class="btn btn-primary" style="margin-top: 2em; display: inline-block;">Start Free Trial</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">Contact Us</div>
+                    <ul>
+                        <li>Everything in Pro</li>
+                        <li>Advanced security features</li>
+                        <li>SSO integration</li>
+                        <li>Dedicated support</li>
+                    </ul>
+                    <a href="https://github.com/joencrypts" class="btn btn-primary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="security">
+        <div class="container">
+            <h2>Your Security, Our Priority</h2>
+            <div class="security-features">
+                <div class="security-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>End-to-end encryption</h3>
+                    <p>Your data is encrypted on your device and remains secure during transmission and storage, ensuring only you have access</p>
+                </div>
+                <div class="security-feature">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Zero-knowledge architecture</h3>
+                    <p>Even our servers can't access your data, ensuring complete privacy with no knowledge of your passwords or sensitive information</p>
+                </div>
+                <div class="security-feature">
+                    <i class="fas fa-key"></i>
+                    <h3>Verified with Cryptography</h3>
+                    <p>All actions and transactions are verified using advanced cryptographic techniques, ensuring the authenticity and integrity</p>
+                </div>
+                <div class="security-feature">
+                    <i class="fas fa-fingerprint"></i>
+                    <h3>Image Encrypted Key</h3>
+                    <p>Visual assets are protected with encrypted keys, adding an extra layer of security to your images and files stored within PassMan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Users Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote">"Amazing and super easy to use!"</div>
+                    <div class="author">
+                        <strong>Jane D.</strong>
+                        <span>Digital Nomad</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">"PassMan streamlined my digital life tremendously!"</div>
+                    <div class="author">
+                        <strong>Sam R.</strong>
+                        <span>Freelance Developer</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">"I finally stopped using sticky notes. Secure and sleek!"</div>
+                    <div class="author">
+                        <strong>Priya V.</strong>
+                        <span>Freelancer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Is PassMan free to use?</h3>
+                    <p>Yes! Our Basic plan is forever free.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How secure is my data?</h3>
+                    <p>We use end-to-end encryption and never store your master password.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I access PassMan on multiple devices?</h3>
+                    <p>Yes, with our Pro and Premium plans.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What happens if I forget my master password?</h3>
+                    <p>Unfortunately, due to our zero-knowledge setup, we cannot retrieve it for you.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is my data backed up ,is it encrypted, Can I access it from anywhere?</h3>
+                    <p>Yes, securely on our encrypted cloud servers.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does PassMan support Multi Level Security?</h3>
+                    <p>Absolutely! You can securely manage access to your passwords.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Take Control of Your Passwords?</h2>
+            <a href="http://127.0.0.1:5000/register" class="btn btn-primary">Start Your Free Trial</a>
+            <p>No credit card required.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/img/logo.png" alt="PassMan Logo" style="height: 25px;" >
+                    <a>
+                        <span style="font-weight: 800; font-size: 24px; color: hwb(0 100% 0%);">PassMan</span>
+                    </a>
+
+                    <p>Secure password management for personal security.</p>
+                    <div class="social-links text-end">
+                        <a href="https://x.com/shanjob" class="social-item">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/shanjo.benadict/" class="social-item">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/iam.shan.jo/" class="social-item">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/joencrypts" class="social-item">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>                   
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#security">Security</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a>About Us</a></li>
+                        <li><a>Blog</a></li>
+                        <li><a>Careers</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a>Privacy Policy</a></li>
+                        <li><a>Terms of Service</a></li>
+                        <li><a>Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PassMan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        const lottiePlayer = document.getElementById('lottieAnimation');
+
+        // Track current animation
+        let isFirstAnimation = true;
+
+        // Listen for when the animation finishes
+        lottiePlayer.addEventListener('complete', () => {
+            if (isFirstAnimation) {
+                lottiePlayer.load('assets/animations/Animation3.json');
+                lottiePlayer.setSpeed(1); // Change speed if needed
+            } else {
+                lottiePlayer.load('assets/animations/Animation2.json');
+                lottiePlayer.setSpeed(0.5); // Reset speed
+            }
+            isFirstAnimation = !isFirstAnimation; // Toggle the state
+        });
+    </script>
+</body>
+</html> 
